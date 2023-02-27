@@ -143,7 +143,7 @@ function loadNavBar() {
 
   // set the text content for each anchor element
   homeNavLink.textContent = "Home";
-  menuNavLink.textContent = "menu";
+  menuNavLink.textContent = "Menu";
   contactNavLink.textContent = "Contact";
 
   // set class for each navbar item
@@ -165,17 +165,12 @@ function loadNavBar() {
   // add the navbar element to the content element
   content.appendChild(navbar);
 
-  let homeClicked = false;
-  let menuClicked = false;
-  let contactClicked = false;
+
 
   homeNavLink.addEventListener("click", function () {
     homeNavLink.classList.add("clicked");
     menuNavLink.classList.remove("clicked");
     contactNavLink.classList.remove("clicked");
-    homeClicked = true;
-    menuClicked = false;
-    contactClicked = false;
     let content = document.getElementById("content");
     if (content.lastChild.id === "container") {
       content.removeChild(content.lastChild);
@@ -186,6 +181,8 @@ function loadNavBar() {
       pageLoadHome();
       return;
     }
+
+//  FUNCTION FOR BORDER MADE OUT OF SPAWNED VEGETABLES
 
     // function spawnVegetable() {
     //   if (homeClicked === true) {
@@ -211,9 +208,6 @@ function loadNavBar() {
     homeNavLink.classList.remove("clicked");
     menuNavLink.classList.add("clicked");
     contactNavLink.classList.remove("clicked");
-    homeClicked = false;
-    menuClicked = true;
-    contactClicked = false;
     let content = document.getElementById("content");
     if (content.lastChild.id === "container") {
       content.removeChild(content.lastChild);
@@ -230,9 +224,6 @@ function loadNavBar() {
     homeNavLink.classList.remove("clicked");
     menuNavLink.classList.remove("clicked");
     contactNavLink.classList.add("clicked");
-    homeClicked = false;
-    menuClicked = false;
-    contactClicked = true;
     let content = document.getElementById("content");
     if (content.lastChild.id === "container") {
       content.removeChild(content.lastChild);
@@ -341,6 +332,9 @@ function pageLoadContact() {
 }
 
 function pageLoadMenu() {
+
+  // create elements
+
   const container = document.createElement("div")
   const menuTitleContainer = document.createElement("div");
   const img1 = document.createElement("img");
@@ -351,14 +345,12 @@ function pageLoadMenu() {
   const beveragesTitleText = document.createElement("h2");
   const img3 = document.createElement("img");
 
-  const beverage1Container = document.createElement("div");
   const beverage1SubContainer = document.createElement("div");
   const beverage1TitleText = document.createElement("h3");
   const beverage1Description = document.createElement("p");
   const beverage1Price = document.createElement("p");
   const beverage1Picture = document.createElement("img");
 
-  const beverage2Container = document.createElement("div");
   const beverage2SubContainer = document.createElement("div");
   const beverage2TitleText = document.createElement("h3");
   const beverage2Description = document.createElement("p");
@@ -369,14 +361,12 @@ function pageLoadMenu() {
   const sidesTitleText = document.createElement("h2");
   const img4 = document.createElement("img");
 
-  const sides1Container = document.createElement("div");
   const sides1SubContainer = document.createElement("div");
   const sides1TitleText = document.createElement("h3");
   const sides1Description = document.createElement("p");
   const sides1Price = document.createElement("p");
   const sides1Picture = document.createElement("img");
 
-  const sides2Container = document.createElement("div");
   const sides2SubContainer = document.createElement("div");
   const sides2TitleText = document.createElement("h3");
   const sides2Description = document.createElement("p");
@@ -384,8 +374,12 @@ function pageLoadMenu() {
   const sides2Picture = document.createElement("img");
 
   const dessertsTitleContainer = document.createElement("div");
-  const dessertsTitleText = document.createElement("h2");
-  const img5 = document.createElement("img");
+
+  const dessertSubContainer = document.createElement("div")
+  const dessertTitleText = document.createElement("h3");
+  const dessertDescription = document.createElement("p");
+  const dessertPrice = document.createElement("p");
+  const dessertPicture = document.createElement("img");
 
   const mainDishesTitleContainer = document.createElement("div");
   const mainDishesTitleText = document.createElement("h2")
@@ -427,6 +421,8 @@ function pageLoadMenu() {
   const mainDishes6Price = document.createElement("p");
   const mainDishes6Picture = document.createElement("img");
 
+//  add classes to elements
+
   container.classList.add("menuContainer")
   container.setAttribute("id", "container");
   menuTitleContainer.classList.add("menuTitleContainer");
@@ -438,15 +434,15 @@ function pageLoadMenu() {
   beveragesTitleText.classList.add("beveragesTitleText");
   img3.classList.add("img3");
 
-  beverage1Container.classList.add("beverage1Container");
-  beverage1SubContainer.classList.add("beverage1SubContainer");
+
+  beverage1SubContainer.classList.add("beverageSubContainer");
   beverage1TitleText.classList.add("beverage1TitleText");
   beverage1Description.classList.add("beverage1Description");
   beverage1Price.classList.add("beverage1Price");
   beverage1Picture.classList.add("beverage1Picture");
 
-  beverage2Container.classList.add("beverage2Container");
-  beverage2SubContainer.classList.add("beverage2SubContainer");
+
+  beverage2SubContainer.classList.add("beverageSubContainer");
   beverage2TitleText.classList.add("beverage2TitleText");
   beverage2Description.classList.add("beverage2Description");
   beverage2Price.classList.add("beverage2Price");
@@ -456,65 +452,79 @@ function pageLoadMenu() {
   sidesTitleText.classList.add("sidesTitleText");
   img4.classList.add("img4");
 
-  sides1Container.classList.add("sides1Container");
-  sides1SubContainer.classList.add("sides1SubContainer");
+
+  sides1SubContainer.classList.add("sidesSubContainer");
   sides1TitleText.classList.add("sides1TitleText");
   sides1Description.classList.add("sides1Description");
   sides1Price.classList.add("sides1Price");
   sides1Picture.classList.add("sides1Picture");
 
-  sides2Container.classList.add("sides2Container");
-  sides2SubContainer.classList.add("sides2Subcontainer");
+
+  sides2SubContainer.classList.add("sidesSubcontainer");
   sides2TitleText.classList.add("sides2TitleText");
   sides2Description.classList.add("sides2Description");
   sides2Price.classList.add("sides2Price");
   sides2Picture.classList.add("sides2Picture");
 
   dessertsTitleContainer.classList.add("dessertsTitleContainer");
-  dessertsTitleText.classList.add("dessertsTitleText");
-  img5.classList.add("img5");
+
+  dessertSubContainer.classList.add("dessertSubContainer")
+  dessertTitleText.classList.add("dessertTitleText")
+  dessertDescription.classList.add("dessertDescription")
+  dessertPicture.classList.add("dessertPicture")
 
   mainDishesTitleContainer.classList.add("mainDishesTitleContainer");
   mainDishesTitleText.classList.add("mainDishesTitleText")
   img6.classList.add("img6")
 
-  mainDishes1SubContainer.classList.add("mainDishes1Subcontainer");
+  mainDishes1SubContainer.classList.add("mainDishesSubContainer");
   mainDishes1TitleText.classList.add("mainDishes1TitleText");
   mainDishes1Description.classList.add("mainDishes1Description");
   mainDishes1Price.classList.add("mainDishes1Price");
   mainDishes1Picture.classList.add("mainDishes1Picture");
 
-  mainDishes2SubContainer.classList.add("mainDishes2Subcontainer");
+  mainDishes2SubContainer.classList.add("mainDishesSubContainer");
   mainDishes2TitleText.classList.add("mainDishes2TitleText");
   mainDishes2Description.classList.add("mainDishes2Description");
   mainDishes2Price.classList.add("mainDishes2Price");
   mainDishes2Picture.classList.add("mainDishes2Picture");
 
-  mainDishes3SubContainer.classList.add("mainDishes3Subcontainer");
+  mainDishes3SubContainer.classList.add("mainDishesSubContainer");
   mainDishes3TitleText.classList.add("mainDishes3TitleText");
   mainDishes3Description.classList.add("mainDishes3Description");
   mainDishes3Price.classList.add("mainDishes3Price");
   mainDishes3Picture.classList.add("mainDishes3Picture");
 
-  mainDishes4SubContainer.classList.add("mainDishes4Subcontainer");
+  mainDishes4SubContainer.classList.add("mainDishesSubContainer");
   mainDishes4TitleText.classList.add("mainDishes4TitleText");
   mainDishes4Description.classList.add("mainDishes4Description");
   mainDishes4Price.classList.add("mainDishes4Price");
   mainDishes4Picture.classList.add("mainDishes4Picture");
 
-  mainDishes5SubContainer.classList.add("mainDishes5Subcontainer");
+  mainDishes5SubContainer.classList.add("mainDishesSubContainer");
   mainDishes5TitleText.classList.add("mainDishes5TitleText");
   mainDishes5Description.classList.add("mainDishes5Description");
   mainDishes5Price.classList.add("mainDishes5Price");
   mainDishes5Picture.classList.add("mainDishes5Picture");
 
-  mainDishes6SubContainer.classList.add("mainDishes6Subcontainer");
+  mainDishes6SubContainer.classList.add("mainDishesSubContainer");
   mainDishes6TitleText.classList.add("mainDishes6TitleText");
   mainDishes6Description.classList.add("mainDishes6Description");
   mainDishes6Price.classList.add("mainDishes6Price");
   mainDishes6Picture.classList.add("mainDishes6Picture");
 
+  // add id's to elements
 
+  mainDishes1SubContainer.setAttribute("id", "1");
+  mainDishes2SubContainer.setAttribute("id", "2");
+  mainDishes3SubContainer.setAttribute("id", "3");
+  mainDishes4SubContainer.setAttribute("id", "4");
+  mainDishes5SubContainer.setAttribute("id", "5");
+  mainDishes6SubContainer.setAttribute("id", "6");
+  sides1SubContainer.setAttribute("id", "1");
+  sides2SubContainer.setAttribute("id", "2");
+  beverage1SubContainer.setAttribute("id", "1");
+  beverage2SubContainer.setAttribute("id", "2");
 
 
 // Append title container and elements to menu container
@@ -530,39 +540,43 @@ menuTitleContainer.appendChild(img2);
 container.appendChild(beveragesTitleContainer);
 beveragesTitleContainer.appendChild(img3);
 beveragesTitleContainer.appendChild(beveragesTitleText);
-container.appendChild(beverage1Container);
-beverage1Container.appendChild(beverage1SubContainer);
+container.appendChild(beverage1SubContainer);
 beverage1SubContainer.appendChild(beverage1TitleText);
 beverage1SubContainer.appendChild(beverage1Description);
 beverage1SubContainer.appendChild(beverage1Price);
 beverage1SubContainer.appendChild(beverage1Picture);
-container.appendChild(beverage2Container);
-beverage2Container.appendChild(beverage2SubContainer);
+container.appendChild(beverage2SubContainer);
 beverage2SubContainer.appendChild(beverage2TitleText);
 beverage2SubContainer.appendChild(beverage2Description);
 beverage2SubContainer.appendChild(beverage2Price);
 beverage2SubContainer.appendChild(beverage2Picture);
 
-// Append sides section to menu container
+// Append sides section to container
 container.appendChild(sidesTitleContainer);
 sidesTitleContainer.appendChild(img4);
 sidesTitleContainer.appendChild(sidesTitleText);
-container.appendChild(sides1Container);
-sides1Container.appendChild(sides1SubContainer);
+container.appendChild(sides1SubContainer);
 sides1SubContainer.appendChild(sides1TitleText);
 sides1SubContainer.appendChild(sides1Description);
 sides1SubContainer.appendChild(sides1Price);
 sides1SubContainer.appendChild(sides1Picture);
-container.appendChild(sides2Container);
-sides2Container.appendChild(sides2SubContainer);
+container.appendChild(sides2SubContainer);
 sides2SubContainer.appendChild(sides2TitleText);
 sides2SubContainer.appendChild(sides2Description);
 sides2SubContainer.appendChild(sides2Price);
 sides2SubContainer.appendChild(sides2Picture);
 
+// Append sides section to container
+
 container.appendChild(dessertsTitleContainer);
-dessertsTitleContainer.appendChild(dessertsTitleText);
-dessertsTitleContainer.appendChild(img5);
+
+container.appendChild(dessertSubContainer)
+dessertSubContainer.appendChild(dessertTitleText)
+dessertSubContainer.appendChild(dessertDescription)
+dessertSubContainer.appendChild(dessertPrice)
+dessertSubContainer.appendChild(dessertPicture)
+
+// Append sides section to container
 
 container.appendChild(mainDishesTitleContainer);
 mainDishesTitleContainer.appendChild(mainDishesTitleText);
@@ -604,7 +618,8 @@ mainDishes6SubContainer.appendChild(mainDishes6Description);
 mainDishes6SubContainer.appendChild(mainDishes6Price);
 mainDishes6SubContainer.appendChild(mainDishes6Picture);
 
-menuTitleContainer.textContent = "Menu";
+//  Add dummy text
+
 menuTitleText.textContent = "Our Menu";
 
 beveragesTitleText.textContent = "Beverages";
@@ -627,7 +642,9 @@ sides2TitleText.textContent = "Side 2";
 sides2Description.textContent = "This is the description for side 2";
 sides2Price.textContent = "$4.99";
 
-dessertsTitleText.textContent = "Desserts";
+dessertTitleText.textContent = "Desserts";
+dessertDescription.textContent = "This is the description for dessert 1"
+dessertPrice.textContent = "$10.99";
 
 mainDishesTitleText.textContent = "Main Dishes";
 
@@ -657,10 +674,3 @@ mainDishes6Price.textContent = "$18.99";
 
 }
 
-// function pageLoadMenu() {
-//   const containerMenu = document.createElement("div");
-//   const smallerContainerMenu = document.createElement("div");
-//   const threeContainersMenu = document.createElement("div");
-//   const titleContainerMenu = document.createElement("div");
-
-// }

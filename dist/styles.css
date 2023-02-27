@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   width: 100%;
   height: 120%;
   background-image: url(background.jpg);
@@ -8,11 +9,36 @@ html, body {
   background-repeat: no-repeat;
 }
 
+p {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
 #content {
   display: flex;
   flex-direction: column;
-align-items: center;
-  margin:0px;
+  align-items: center;
+  margin: 0px;
   padding: 0px;
   width: 100%;
   height: 100%;
@@ -28,27 +54,23 @@ align-items: center;
 }
 
 .navbar {
-
   display: flex;
   align-items: center;
   width: 40%;
   height: 7%;
-  
 }
 
 .navbarList {
   height: 100%;
-  
 }
 
 button {
   color: #3e2816;
   font-weight: 900;
-  background-color:#e3410a;
+  background-color: #e3410a;
   height: 100%;
   width: 100%;
   border-radius: 6px;
-  
 }
 
 .container {
@@ -61,7 +83,6 @@ button {
 }
 
 .smallerContainer {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,7 +93,7 @@ button {
 }
 
 .titleContainer {
-  margin:0;
+  margin: 0;
   padding: 0;
   background-color: #d4af66;
   display: flex;
@@ -80,19 +101,21 @@ button {
   border-radius: 15px;
   border: 2px solid #58402b;
   width: 100%;
+  align-items: center;
   text-align: center;
   font-style: italic;
   font-weight: 900;
-  color:#830404 ;
+  color: #830404;
   box-sizing: border-box;
   box-shadow: 0 0 10px 5px #26481f;
 }
 
 
+
 .threeContainers {
   display: flex;
   flex-direction: column;
-  height:85%;
+  height: 85%;
   width: 100%;
   border-radius: 15px;
   box-sizing: border-box;
@@ -104,7 +127,6 @@ button {
   background-color: #ffe98a;
   width: 100%;
   height: 40%;
-  
 }
 .container2 {
   display: flex;
@@ -124,10 +146,7 @@ button {
   align-items: center;
 }
 
-
-
 .restaurantHours {
-
   background-color: #ffe98a;
   display: flex;
   justify-content: center;
@@ -138,7 +157,7 @@ button {
 }
 
 .hoursTitle {
-  padding:1rem;
+  padding: 1rem;
   margin: 0;
   background-color: #edb057;
   border: 4px dashed #58402b;
@@ -149,12 +168,12 @@ button {
 .hoursTitleContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;  
+  justify-content: flex-end;
   text-align: center;
   height: 30%;
   width: 35%;
   box-sizing: border-box;
-  
+
   font-weight: 900;
   padding-left: 6rem;
 }
@@ -172,12 +191,12 @@ button {
 
 .day-of-week {
   box-sizing: border-box;
-  padding: 0.5rem ;
+  padding: 0.5rem;
   font-weight: 500;
 }
 
 .textContent1 {
-  background-color:#edb057 ;
+  background-color: #edb057;
   line-height: 2.5rem;
   margin: 3rem;
   padding: 1rem;
@@ -185,7 +204,7 @@ button {
   border-radius: 10px;
   border: 6px solid #58402b;
   text-align: center;
-  box-shadow: 0 0 10px 5px #d4af66
+  box-shadow: 0 0 10px 5px #d4af66;
 }
 
 img {
@@ -197,56 +216,50 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-width: 20%;
-height: 30%;
-border: 1px solid black;
-background-color: #edb057;
-border: 4px dashed #58402b;
-box-shadow: 0 0 10px 5px #388d2e;
-padding: 1rem;
+  width: 20%;
+  height: 30%;
+  border: 1px solid black;
+  background-color: #edb057;
+  border: 4px dashed #58402b;
+  box-shadow: 0 0 10px 5px #388d2e;
+  padding: 1rem;
 }
 
 .container3Address {
-  display:flex;
+  display: flex;
   flex-direction: column;
   width: 85%;
   height: 50%;
-
 }
 
 .container3P {
   display: flex;
   justify-content: flex-end;
   height: 100%;
-  
 }
 
 .container3Text {
   width: 100%;
-
-  
 }
 
 .location-text {
   font-weight: 900;
   margin: 0;
   padding: 0;
-  
 }
 
 .container-3-text {
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   border: 1px solid black;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   background-color: #edb057;
   border: 2px solid #58402b;
   box-shadow: 0 0 10px 5px #cf2929;
   font-weight: 900;
   text-shadow: 1px 1px 2px #388d2e, 0 0 1em #388d2e, 0 0 0.2em #388d2e;
 }
-
 
 .fall-vegetable {
   position: absolute;
@@ -279,26 +292,24 @@ padding: 1rem;
   background-color: #9d2001;
 }
 
-
 .contactUsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height:85%;
+  justify-content: space-around;
+  height: 85%;
   width: 40%;
   border-radius: 15px;
   background-color: #ffe98a;
   box-sizing: border-box;
   border: 3px solid #58402b;
-  
 }
 
 .menuContainer {
-overflow: scroll;
-    display: flex;
+  overflow: scroll;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  height:85%;
   width: 40%;
   border-radius: 15px;
   background-color: #ffe98a;
@@ -311,7 +322,6 @@ overflow: scroll;
 
 .menuContainer::-webkit-scrollbar {
   width: 10px;
-
 }
 
 .menuContainer::-webkit-scrollbar-track {
@@ -324,4 +334,32 @@ overflow: scroll;
 
 .menuContainer::-webkit-scrollbar-thumb:hover {
   background: #58402b;
+}
+
+.menuTitleContainer {
+  display: flex;
+}
+.beveragesTitleContainer {
+  display: flex;
+}
+.sidesTitleContainer {
+  display: flex;
+}
+.mainDishesTitleContainer {
+  display: flex;
+}
+
+.beverageSubContainer {
+
+padding: 60px;
+}
+.sidesSubContainer {
+  padding: 60px;
+}
+
+.mainDishesSubContainer {
+  padding: 60px;
+}
+.dessertSubContainer {
+  padding: 60px;
 }
