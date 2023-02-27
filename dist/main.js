@@ -164,6 +164,8 @@ function loadNavBar() {
 
   // add the navbar element to the content element
   content.appendChild(navbar);
+  pageLoadHome();
+  homeNavLink.classList.add("clicked");
 
 
 
@@ -172,6 +174,7 @@ function loadNavBar() {
     menuNavLink.classList.remove("clicked");
     contactNavLink.classList.remove("clicked");
     let content = document.getElementById("content");
+
     if (content.lastChild.id === "container") {
       content.removeChild(content.lastChild);
       homeNavLink.classList.remove("clicked");
