@@ -164,11 +164,43 @@ function loadNavBar() {
 
   // add the navbar element to the content element
   content.appendChild(navbar);
+
+  let routes = {};
+  let templates = {};
+
+  function route (path, template) {
+    if (typeof template === 'function') {
+      routes[path] = template;
+    } else if (typeof template === 'string') {
+      routes[path] = templates[template];
+    }
+  };
+
+  function template (name, templateFunction) {
+    templates[name] = templateFunction;
+  };
+
+  template('home', function(){
+    pageLoadHome();
+  });
+
+  template('menu', function(){
+    pageLoadMenu();
+  });
+
+  template('contact', function(){
+    pageLoadContact();
+  });
+
+  route('/', 'home');
+  route('/menu', 'menu');
+  route('/contact', 'contact');
+
+  // set initial page load to home and add clicked class
   pageLoadHome();
   homeNavLink.classList.add("clicked");
 
-
-
+  // add event listeners for navbar links
   homeNavLink.addEventListener("click", function () {
     homeNavLink.classList.add("clicked");
     menuNavLink.classList.remove("clicked");
@@ -181,30 +213,10 @@ function loadNavBar() {
       menuNavLink.classList.remove("clicked");
       contactNavLink.classList.remove("clicked");
     } else {
-      pageLoadHome();
-      return;
+      // call the route's template function to display the content
+      routes['/']();
+      window.history.pushState({}, '', '/#home')
     }
-
-//  FUNCTION FOR BORDER MADE OUT OF SPAWNED VEGETABLES
-
-    // function spawnVegetable() {
-    //   if (homeClicked === true) {
-    //     let vegetable = document.createElement("img");
-    //     vegetable.src = "vegetable.png";
-    //     vegetable.classList.add("fall-vegetable");
-
-    //     navbar.appendChild(vegetable);
-
-    //     setTimeout(function () {
-    //       vegetable.remove();
-    //     }, 30000);
-    //   } else
-    //     document.querySelectorAll(".fall-vegetable").forEach((e) => e.remove());
-    //   return;
-    // }
-
-    // // spawn a vegetable every 0.05 seconds
-    // setInterval(spawnVegetable, 50);
   });
 
   menuNavLink.addEventListener("click", function () {
@@ -218,11 +230,11 @@ function loadNavBar() {
       menuNavLink.classList.remove("clicked");
       contactNavLink.classList.remove("clicked");
     } else {
-      pageLoadMenu();
-      return;
+      // call the route's template function to display the content
+      routes['/menu']();
+      window.history.pushState({}, '', '/menu');
     }
   });
-
   contactNavLink.addEventListener("click", function () {
     homeNavLink.classList.remove("clicked");
     menuNavLink.classList.remove("clicked");
@@ -234,11 +246,16 @@ function loadNavBar() {
       menuNavLink.classList.remove("clicked");
       contactNavLink.classList.remove("clicked");
     } else {
-      pageLoadContact();
-      return;
+      // call the route's template function to display the content
+      routes['/contact']();
+      window.history.pushState({}, '', '/contact')
     }
   });
-}
+
+  }
+
+
+
 
 window.addEventListener("load", loadNavBar);
 
@@ -677,3 +694,23 @@ mainDishes6Price.textContent = "$18.99";
 
 }
 
+//  FUNCTION FOR BORDER MADE OUT OF SPAWNED VEGETABLES
+
+    // function spawnVegetable() {
+    //   if (homeClicked === true) {
+    //     let vegetable = document.createElement("img");
+    //     vegetable.src = "vegetable.png";
+    //     vegetable.classList.add("fall-vegetable");
+
+    //     navbar.appendChild(vegetable);
+
+    //     setTimeout(function () {
+    //       vegetable.remove();
+    //     }, 30000);
+    //   } else
+    //     document.querySelectorAll(".fall-vegetable").forEach((e) => e.remove());
+    //   return;
+    // }
+
+    // // spawn a vegetable every 0.05 seconds
+    // setInterval(spawnVegetable, 50);
